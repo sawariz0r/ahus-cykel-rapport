@@ -1,27 +1,16 @@
 import React from 'react'
 import Styled from "styled-components";
 import { useCycle, motion } from "framer-motion";
-import ToggleBars from "./ToggleBars";
-import { Navigation } from './Navigation';
+import Toggle from "./Toggle";
+import { Menu } from './Menu';
 
 interface Props { }
 
 const NavContainer = Styled<any>(motion.div)`
-  height: 100vh;
+  height: 100%;
   width: 100vw;
   z-index: 600;
-`;
-const Trigger = Styled.div`
-  position: absolute;
-  box-sizing: border-box;
-  top: 16px;
-  right: 16px;
-  z-index: 500;
-  height: 60px;
-  width: 60px;
-  background: #030303cc;
-  border-radius: 10px;
-  padding: 10px;
+  overflow: hidden;
 `;
 
 export const Nav = (props: Props) => {
@@ -32,10 +21,12 @@ export const Nav = (props: Props) => {
       initial={false}
       animate={isOpen ? "open" : "closed"}
     >
-      <Trigger onClick={() => toggleOpen()}>
-        <ToggleBars />
-      </Trigger>
-    <Navigation isOpen={isOpen} />
+      <Toggle onClick={() => {
+        toggleOpen()
+      }} />
+      <Menu isOpen={isOpen}>
+
+      </Menu>
     </NavContainer>
   )
 }
