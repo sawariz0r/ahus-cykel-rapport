@@ -3,10 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { isMobile } from "react-device-detect";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    {
+      isMobile ? 
+      <App />
+      :
+      <div>This is only supported in mobile clients at the moment</div>
+    }
   </React.StrictMode>,
   document.getElementById('root')
 );
