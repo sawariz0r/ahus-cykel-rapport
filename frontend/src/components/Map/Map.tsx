@@ -6,7 +6,7 @@ import MarkerClusterGroup from "react-leaflet-markercluster";
 import Styled from "styled-components";
 import "leaflet/dist/leaflet.css";
 import "react-leaflet-markercluster/dist/styles.min.css";
-
+import { isMobile } from "react-device-detect";
 import bicycle from "./bicycle.svg";
 import person from "./person.svg";
 
@@ -19,7 +19,7 @@ interface Props {
 }
 
 const LMap = Styled<any>(LeafletMap)`
-  min-height: -webkit-fill-available;
+  height: ${ isMobile ? "100%" : "100vh" };
   width: 100vw;
   overflow: hidden;
 
@@ -74,7 +74,7 @@ export const Map = (props: Props) => {
         //onMouseDown={startClickTimer}
         //onMouseUp={handleClickEnd}
         //onMouseMove={handleClickEnd}
-        center={[55.9247, 14.2943]}>
+        center={ userlat ? [userlat, userlong] : [55.9247, 14.2943]}>
         <TileLayer
           style={{ height: "100%" }}
           url={"https://{s}.tile.jawg.io/jawg-sunny/{z}/{x}/{y}{r}.png?access-token={accessToken}"}

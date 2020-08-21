@@ -19,7 +19,7 @@ function App() {
     <Container>
       <Map toggleInfo={toggleInfoOpen} />
       <Nav />
-      <Info toggleInfo={toggleInfoOpen} isOpen={infoIsOpen} title="hej" description="Text" />
+      <Info toggleInfo={toggleInfoOpen} isOpen={infoIsOpen} title="hej" />
     </Container>
   );
 }
