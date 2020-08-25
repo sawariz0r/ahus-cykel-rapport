@@ -14,7 +14,7 @@ const Nav = Styled(motion.div)`
   top: 0;
   right: 0;
   width: 100vw;
-  z-index: 810;
+  z-index: 1100;
   background: rgba(0, 0, 0, 0.8);
 `;
 

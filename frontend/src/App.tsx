@@ -7,6 +7,7 @@ import { useCycle } from 'framer-motion';
 
 const Container = Styled.div`
   overflow: hidden;
+  max-height: 100vh;
   height: 100%;
   width: 100vw;
 `;
@@ -17,8 +18,8 @@ function App() {
 
   return (
     <Container>
-      <Map toggleInfo={toggleInfoOpen} />
       <Nav />
+      <Map toggleInfo={toggleInfoOpen} style={{ pointerEvents: infoIsOpen ? "none" : "auto" }} />
       <Info toggleInfo={toggleInfoOpen} isOpen={infoIsOpen} title="hej" />
     </Container>
   );

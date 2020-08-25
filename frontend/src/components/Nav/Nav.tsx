@@ -25,7 +25,6 @@ export const Nav = (props: Props) => {
         toggleOpen()
       }} />
       <Menu isOpen={isOpen}>
-
       </Menu>
     </NavContainer>
   )

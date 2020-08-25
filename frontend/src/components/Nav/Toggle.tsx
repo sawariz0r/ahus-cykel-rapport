@@ -10,7 +10,7 @@ const Trigger = Styled.div`
   box-sizing: border-box;
   top: 16px;
   right: 16px;
-  z-index: 820;
+  z-index: 1120;
   height: 40px;
   width: 40px;
   background: #030303cc;
